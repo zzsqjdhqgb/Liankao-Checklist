@@ -18,24 +18,10 @@ function AddElement() {
         newNode.tabIndex = "0";
         newNode.innerHTML = "<span class='text'>Reset Status</span>";
         newNode.addEventListener("click", async () => {
-            await clearStorage();
-            window.location.reload();
-        });
-
-        parent.insertBefore(newNode, nxtnode);
-    }
-
-    function AddClearButton() {
-        let nxtnode = document.querySelector("body > div.ui.container.main-container > div.ui.info.message");
-        let parent = nxtnode.parentElement;
-
-        const newNode = document.createElement("div");
-        newNode.className = "ui button";
-        newNode.tabIndex = "0";
-        newNode.innerHTML = "<span class='text'>Reset Status</span>";
-        newNode.addEventListener("click", async () => {
-            await clearStorage();
-            window.location.reload();
+            if (confirm("这将清除所有课程中的改题数据，是否继续？")) {
+                await clearStorage();
+                window.location.reload();
+            }
         });
 
         parent.insertBefore(newNode, nxtnode);
