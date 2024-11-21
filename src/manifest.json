@@ -4,7 +4,7 @@
     "manifest_version": 3,
     "description": "",
     "icons": {
-        "1024": "icons/icon1024.png"
+        "256": "icons/icon256.png"
     },
     "permissions": [
         "storage"
